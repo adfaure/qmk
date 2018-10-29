@@ -19,6 +19,7 @@
 #include "keymap_bepo.h"
 
 
+
 extern keymap_config_t keymap_config;
 
 enum planck_layers {
@@ -57,10 +58,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = {
-  {KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC},
-  {KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT},
-  {KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_QUOT},
-  {KC_LCTL, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_BSPC,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_LCTL, KC_RGHT}
+  {KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,     KC_BSPC},
+  {KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,  KC_ENT},
+  {KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_QUOT},
+  {KC_LCTL, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_BSPC, KC_SPC, RAISE,   KC_LEFT, KC_DOWN,  KC_UP,     KC_RGHT}
 },
 
 
@@ -101,64 +102,64 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 },
 
 
-/* BEPO
+/* Bépo
  * ,-----------------------------------------------------------------------------------.
- * |   W  |   B  |   É  |   P  |   O  |   È  |   !  |   V  |   D  |   L  |   J  |  Z   |
+ * | Esc  |   B  |   É  |   P  |   O  |   È  |   !  |   V  |   D  |   L  |   J  | Ret  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |  Tab |   A  |   U  |   I  |   E  |   ;  |   C  |   T  |   S  |   R  |   N  |  M   |
+ * |   W  |   A  |   U  |   I  |   E  |   ;  |   C  |   T  |   S  |   R  |   N  |  M   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |Shift |   À  |   Y  |   X  |   :  |   K  |   ?  |   Q  |   G  |   H  |   F  |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl |   $  | Alt  | GUI  |Lower |Return|Space |Raise | Alt  | Back |   %  |Enter |
+ * | Tab  |  Ctl | Alt  | GUI  |Lower |Return|Space |Raise | Alt  | Back |   Z  |Enter |
  * `-----------------------------------------------------------------------------------'
  */
 [_BEPO] = {
-  {BP_W,    BP_B,      BP_ECUT, BP_P,    BP_O,      BP_EGRV, BP_EXLM, BP_V,     BP_D,    BP_L,    BP_J,    BP_Z},
-  {KC_ESC,  BP_A,      BP_U,    BP_I,    BP_E,      BP_SCLN, BP_C,    BP_T,     BP_S,    BP_R,    BP_N,    BP_M},
-  {KC_LSFT, BP_AGRV,   BP_Y,    BP_X,    BP_DOT,    BP_K,    BP_QEST, BP_Q,     BP_G,    BP_H,    BP_F,    KC_LSFT},
-  {KC_LCTL, BP_DOLLAR, KC_LALT, KC_LGUI, BP_LOWER,  KC_BSPC, KC_SPC,  BP_RAISE, KC_RALT, KC_BSPC, BP_PERC, KC_ENT}
+  {KC_ESC,  BP_B,    BP_ECUT, BP_P,    BP_O,      BP_EGRV, BP_DCRC, BP_V,     BP_D,    BP_L,    BP_J, KC_BSPC},
+  {BP_W,    BP_A,    BP_U,    BP_I,    BP_E,      BP_COMM, BP_C,    BP_T,     BP_S,    BP_R,    BP_N, BP_M},
+  {KC_LSFT, BP_AGRV, BP_Y,    BP_X,    BP_DOT,    BP_K,    BP_APOS, BP_Q,     BP_G,    BP_H,    BP_F, KC_LSFT},
+  {KC_TAB,  KC_LCTL, KC_LGUI, KC_LALT, BP_LOWER,  KC_SPC,  KC_SPC,  BP_RAISE, KC_RALT, KC_RCTL, BP_Z, KC_ENT}
 },
 
 
 /* Bépo raise
  * ,-----------------------------------------------------------------------------------.
- * |   #  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
+ * |   #  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Del  |   |  |      |   &  |      |      | Left | Down |  Up  |Right |   {  |  }   |
+ * | Del  |   |  |  `   |   &  |   œ  |      | Left | Down |  Up  |Right |   {  |  °   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |   /  |  \   |   [  |   ]  |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
+ * |      |      |      |      |      |      |  Del |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_BP_RAISE] = {
-  {BP_HASH, BP_1,    BP_2,    BP_3,    BP_4,    BP_5,    BP_6,    BP_7,    BP_8,    BP_9,    BP_0,    BP_GRVB},
-  {KC_DEL,  BP_PIPE, _______, BP_AMPR, BP_OE,   _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, BP_LCBR, BP_RCBR},
-  {_______, BP_SLSH, BP_BSLS, BP_LCBR, BP_RCBR, _______, _______, _______, _______, _______, KC_END, _______},
-  {_______, _______, _______, _______, _______, KC_DEL,  _______, _______, _______, _______, _______, _______}
+  {BP_HASH, BP_1,    BP_2,    BP_3,    BP_4,    BP_5,    BP_6,    BP_7,    BP_8,    BP_9,    BP_0,    _______},
+  {KC_DEL,  BP_PIPE, BP_GRV, BP_AMPR, BP_OE,   _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, KC_BTN1, BP_DEGR},
+  {_______, BP_SLSH, BP_BSLS, BP_LBRC, BP_RBRC, _______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, KC_BTN2, KC_PGUP},
+  {BP_AMPR, _______, _______, _______, _______, KC_DEL,  _______, _______, _______, _______, BP_CCED, KC_PGDN}
 },
 
 /* Bépo lower
  * ,-----------------------------------------------------------------------------------.
- * |   $  |   "  |   «  |   »  |  (   |  )   |   -  |   +  |   @  |   *  |   =  |   %  |
+ * |   $  |   "  |   <  |   >  |  (   |  )   |   -  |   +  |   @  |   *  |   =  |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |      |      |      |      |      |      | Left | Down |  Up  |Right |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |  Del |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_BP_LOWER] = {
-  {BP_DLR,  BP_DQOT, BP_LGIL, BP_RGIL, BP_LPRN, BP_RPRN,BP_MINUS, BP_PLUS, BP_AT, BP_ASTR, BP_EQL,  BP_PERC},
-  {KC_DEL,  _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  _______, _______},
-  {_______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______},
-  {_______, _______, _______, _______, _______, KC_DEL, _______, _______, _______,  _______, _______, _______}
+  {BP_DLR,  BP_DQOT, BP_LESS, BP_GRTR, BP_LPRN, BP_RPRN, BP_AT,   BP_PLUS, BP_MINUS, BP_ASTR, BP_EQL, _______},
+  {_______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BTN1, BP_PERC},
+  {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_PGUP},
+  {_______, _______, _______, _______, _______, KC_DEL,  _______, _______, _______, _______, _______, KC_PGDN}
 },
 
 
 /* Adjust (Lower + Raise)
- * ,--------------------------+@---------------------------------------------------------.
+ * ,--------------------------+@-------     --------------------------------------------------.
  * |      | Reset|      |      |      |      |      |      |      |      |      |  Del |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |Aud on|Audoff|AGnorm|AGswap|Qwerty|      |Dvorak|      | Bepo |
@@ -172,12 +173,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {_______, RESET,   DEBUG,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_DEL },
   {_______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______,  _______, _______,  QWERTY,  BEPO },
   {_______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF, _______, _______, _______},
-  {_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______}
+  {KC_ACL0, KC_ACL1, KC_ACL2, _______, _______, _______, _______, _______, _______, _______, _______, _______}
 }
 
 };
 
-  
+
 
 uint32_t layer_state_set_user(uint32_t state) {
 
@@ -202,6 +203,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         layer_off(_BP_RAISE);
         layer_off(_BP_LOWER);
+        layer_on(_RAISE);
+        layer_on(_LOWER);
         set_single_persistent_default_layer(_QWERTY);
       }
       return false;
@@ -210,6 +213,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         layer_off(_RAISE);
         layer_off(_LOWER);
+        layer_on(_BP_LOWER);
+        layer_on(_BP_RAISE);
         set_single_persistent_default_layer(_BEPO);
       }
       return false;
